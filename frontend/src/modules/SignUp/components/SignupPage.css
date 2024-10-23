@@ -1,0 +1,100 @@
+/* Body */
+body {
+    background-color: #f0f4f8;
+    font-family: 'Montserrat', sans-serif;
+    /* Premium font */
+}
+
+/* Language Selector */
+.language-selector {
+    position: absolute;
+    top: 10px;
+    /* Move it to the top */
+    right: 20px;
+    /* Align it on the right */
+}
+
+.language-selector .btn {
+    color: #555;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.language-selector span {
+    color: #555;
+}
+
+/* Title */
+.premium-subtitle {
+    font-size: 26px;
+
+    font-weight: 600;
+    color: #007bff;
+    margin-top: 40px;
+}
+
+/* Role Cards */
+.role-card {
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    padding: 30px;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(82, 95, 127, 0.7);
+}
+
+.role-icon {
+    font-size: 36px;
+    color: #007bff;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    /* Add icon animation */
+}
+
+.role-card:hover .role-icon {
+    transform: scale(1.2);
+    /* Animate icon on hover */
+}
+
+.student-card {
+    background-color: #e8f8ff;
+}
+
+.teacher-card {
+    background-color: #e0f7e5;
+}
+
+.admin-card {
+    background-color: #f9e4e4;
+}
+
+.card-title {
+    font-size: 24px;
+    color: #007bff;
+    font-weight: 700;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Terms and Policy Links */
+.terms-policy .link {
+    color: #007bff;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.terms-policy .link:hover {
+    text-decoration: underline;
+}

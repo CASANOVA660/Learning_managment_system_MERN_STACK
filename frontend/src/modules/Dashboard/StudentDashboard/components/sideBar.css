@@ -1,0 +1,97 @@
+/* Sidebar.css */
+.sidebar {
+    position: fixed;
+    /* Keep it fixed to the side */
+    top: 0;
+    /* Align it to the top */
+    left: 10px;
+    /* Add some space from the left */
+    width: 200px;
+    /* Set the width of the sidebar */
+    height: 100vh;
+    /* Full height */
+    background-color: #f8f9fa;
+    /* Background color */
+    border-right: 1px solid #e5e5e5;
+    /* Optional border */
+    display: flex;
+    flex-direction: column;
+    /* Vertical layout */
+    padding-top: 20px;
+    /* Top padding for the sidebar */
+    transition: width 0.3s;
+    /* Smooth transition */
+    z-index: 1000;
+    /* Ensure the sidebar is on top */
+}
+
+.sidebar.closed {
+    width: 60px;
+    /* Reduced width when closed */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: center;
+    /* Center the logo */
+    align-items: center;
+    /* Center vertically */
+    margin-bottom: 20px;
+    /* Add some space below the logo */
+}
+
+.toggle-btn {
+    position: absolute;
+    /* Position it absolutely */
+    right: -30px;
+    /* Position it at the edge */
+    top: 20px;
+    /* Align it vertically with some space from the top */
+    background: none;
+    /* Remove default button styling */
+    border: none;
+    /* Remove border */
+    cursor: pointer;
+    /* Pointer cursor */
+    font-size: 24px;
+    /* Icon size */
+    color: blue;
+    /* Arrow color */
+}
+
+.sidebar-nav {
+    list-style-type: none;
+    /* Remove list styles */
+    padding: 0;
+    /* Remove padding */
+}
+
+.sidebar-nav .nav-item {
+    margin: 10px 0;
+    /* Space between items */
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    /* Flex display for icon and text */
+    align-items: center;
+    /* Center vertically */
+    padding: 10px;
+    /* Padding around links */
+    color: #333;
+    /* Text color */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.sidebar-nav .nav-link:hover {
+    background-color: #e9ecef;
+    /* Hover background */
+    border-radius: 4px;
+    /* Rounded corners on hover */
+}
+
+.sidebar-nav .nav-link i {
+    margin-right: 10px;
+    /* Space between icon and text */
+}

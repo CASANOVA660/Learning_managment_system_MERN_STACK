@@ -1,4 +1,4 @@
-# Contributing to [Your Project Name]
+# Contributing to [Learning_managment_system_MERN_STACK]
 
 Thank you for considering contributing to this project!
 

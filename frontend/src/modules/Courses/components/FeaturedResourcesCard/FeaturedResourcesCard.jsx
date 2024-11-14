@@ -1,11 +1,11 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../cards/cardinfo"; // Assuming these components are pre-made
+import { Card, CardHeader, CardTitle, CardContent } from "../../../Dashbord/StudentDashbord/cards/cardinfo"; // Assuming these components are pre-made
 import './FeaturedResourcesCard.css'; // Import the normal CSS for styling
 
 const FeaturedResourcesCard = () => (
     <Card className="featured-resource-card">
-        <CardHeader>
-            <CardTitle>Featured Resources</CardTitle>
+        <CardHeader className="card-header">
+            <CardTitle className="card-title">Featured Resources</CardTitle>
         </CardHeader>
         <CardContent>
             <div className="resource-info">

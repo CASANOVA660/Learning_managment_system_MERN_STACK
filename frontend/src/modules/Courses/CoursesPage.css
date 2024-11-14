@@ -29,23 +29,6 @@
     justify-content: flex-start;
 }
 
-.subject-card {
-    width: 300px;
-    /* Fixed width for each card */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-    cursor: pointer;
-    background-color: #fff;
-    margin-bottom: 20px;
-    /* Space between cards in flex layout */
-}
-
-.subject-card:hover {
-    transform: translateY(-5px);
-}
-
 /* Styling for the search input */
 .search-input {
     width: 100%;
@@ -79,4 +62,49 @@
     top: 50%;
     transform: translateY(-50%);
     color: #888;
+}
+
+/* Featured Resources Card Container */
+.feature-card-container {
+    margin-top: 40px;
+    /* Adds space between the subject cards and the featured card */
+}
+
+/* Styling for each subject card */
+.subject-card {
+    width: 300px;
+    /* Fixed width for each card */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    background-color: #fff;
+    margin-bottom: 20px;
+    /* Space between cards in flex layout */
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Align Featured Resources and Recent Announcements Cards */
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    /* Ensure the cards wrap on smaller screens */
+    height: 100%;
+}
+
+/* Featured Resources Card and Recent Announcements Card styling */
+.feature-card-container,
+.announcement-card-container {
+    flex: 1;
+    max-width: 48%;
+    /* Cards will take up 48% width */
+    box-sizing: border-box;
+    height: 100%;
 }

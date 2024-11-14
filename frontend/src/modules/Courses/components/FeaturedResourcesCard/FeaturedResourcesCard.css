@@ -1,0 +1,100 @@
+/* Container for the Featured Resource Card */
+.featured-resource-card {
+    display: flex;
+    flex-direction: row;
+    /* Make the card horizontal */
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Remove gray background from the title */
+.card-header {
+    padding: 0;
+    margin-bottom: 20px;
+    /* Add some space below the title */
+    width: 100%;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    /* Ensures the title is dark */
+}
+
+/* Content Section of the Card */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Resource Information */
+.resource-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.resource-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.resource-description {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.resource-publisher {
+    font-size: 0.75rem;
+    color: #aaa;
+}
+
+/* Button Styling */
+.download-btn {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: #333;
+}
+
+.download-icon {
+    margin-right: 8px;
+    fill: white;
+    width: 16px;
+    height: 16px;
+}
+
+/* Badge Styling */
+.badges {
+    display: flex;
+    gap: 10px;
+}
+
+.badge {
+    background-color: #000000;
+    color: #333;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 12px;
+}
+
+.badge:hover {
+    background-color: #ddd;
+}

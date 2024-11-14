@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Sidebar from '../Dashbord/StudentDashbord/sideBar/sideBar';
 import SubjectCard from './components/SubjectCard/SubjectCard';
 import { Search } from 'lucide-react'; // Importing Search icon from 'lucide-react'
+import FeaturedResourcesCard from './components/FeaturedResourcesCard/FeaturedResourcesCard';
+import RecentAnnouncementsCard from './components/RecentAnnouncementsCard/RecentAnnouncementsCard';
 import './CoursesPage.css';
 
 const filteredSubjects = [
@@ -14,7 +16,6 @@ const filteredSubjects = [
 const CoursesPage = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedSubject, setSelectedSubject] = useState(null);
-
 
     return (
         <div className="courses-page">
@@ -41,9 +42,7 @@ const CoursesPage = () => {
 
                             {/* Subject Cards Grid */}
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                                <SubjectCard
-
-                                />
+                                <SubjectCard />
                             </div>
 
                             {/* Separator (if needed) */}
@@ -57,6 +56,16 @@ const CoursesPage = () => {
                             {/* Add more content for selected subject */}
                         </div>
                     )}
+
+                    {/* Featured Resources and Recent Announcements Cards side by side */}
+                    <div className="card-container">
+                        <div className="feature-card-container">
+                            <FeaturedResourcesCard />
+                        </div>
+                        <div className="announcement-card-container">
+                            <RecentAnnouncementsCard />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

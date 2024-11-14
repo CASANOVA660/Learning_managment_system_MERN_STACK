@@ -1,0 +1,107 @@
+/* Container for the Recent Announcements Card */
+.recent-announcement-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Header Section */
+.card-header {
+    padding: 0;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Content Section */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Announcement Info */
+.space-y-4 {
+    margin-top: 10px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.badge.urgent {
+    background-color: #f44336;
+    color: white;
+}
+
+.text-muted-foreground {
+    color: #666;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+}
+
+/* Button Styling */
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn.link {
+    background-color: transparent;
+    color: #007BFF;
+    font-size: 0.875rem;
+    text-decoration: underline;
+}
+
+.btn.link:hover {
+    background-color: transparent;
+    color: #0056b3;
+}
+
+.btn.sm {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+}
+
+/* Additional Styles for the button and badges */
+.ml-2 {
+    margin-left: 0.5rem;
+}
+
+.text-muted-foreground {
+    color: #666;
+}

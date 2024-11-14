@@ -1,0 +1,63 @@
+/* AttendanceTracker.css */
+
+/* Custom styles for the pie chart container */
+.pie-chart-container {
+    height: 250px;
+    /* Adjust the height of the pie chart container */
+    width: 100%;
+}
+
+/* Ensure the Card container uses the full width */
+.card {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+    padding: 24px;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+}
+
+.card-content {
+    padding: 24px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Custom styling for the chart (adjustments for responsiveness) */
+.responsive-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pie-chart {
+    display: block;
+    margin: 0 auto;
+}
+
+.card-footer {
+    padding: 16px 24px;
+    background-color: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    font-size: 1rem;
+}

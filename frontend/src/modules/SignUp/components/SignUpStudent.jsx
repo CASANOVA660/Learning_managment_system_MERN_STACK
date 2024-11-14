@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axiosRequest from "../../../Utils/AxiosConfig";
+import axiosRequest from "../../../lib/AxiosConfig";
 import './SignUpStudent.css'; // Assuming you have this CSS file
 
 const SignUpStudent = () => {

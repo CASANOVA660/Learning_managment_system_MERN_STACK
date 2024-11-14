@@ -1,0 +1,42 @@
+/* Card.css - Add to the existing CSS file or create a new one */
+
+.progress-card {
+    width: 100%;
+    margin-top: 2rem;
+    /* Space between this and previous card */
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Card Header */
+.card-header {
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Chart container */
+.progress-chart {
+    height: 300px;
+    /* Set fixed height for the chart */
+    width: 100%;
+}
+
+/* Add any additional custom styles for responsiveness */
+@media (max-width: 768px) {
+    .progress-card {
+        margin-left: 0;
+        padding: 1rem;
+    }
+}

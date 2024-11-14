@@ -1,0 +1,47 @@
+/* CoursesPage layout */
+.courses-page {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.courses-page>* {
+    box-sizing: border-box;
+}
+
+.courses-page .Sidebar {
+    width: 250px;
+    /* Ensure the sidebar has a fixed width */
+    flex-shrink: 0;
+    /* Prevents the sidebar from shrinking */
+}
+
+.subject-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Makes the card container take the remaining space */
+    margin-left: 250px;
+    /* Adds space between sidebar and cards */
+    padding: 20px;
+    gap: 20px;
+    flex-grow: 1;
+    /* Ensures this section takes up the remaining space after the sidebar */
+    justify-content: flex-start;
+}
+
+.subject-card {
+    width: 300px;
+    /* Fixed width for each card */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    background-color: #fff;
+    margin-bottom: 20px;
+    /* Space between cards in flex layout */
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+}

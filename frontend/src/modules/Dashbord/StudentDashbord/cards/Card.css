@@ -1,0 +1,43 @@
+/* General card container */
+.card {
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+
+}
+
+/* Card header styles */
+.card-header {
+    padding: 24px;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.card-header .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-header .card-description {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+}
+
+/* Card content styles */
+.card-content {
+    padding: 24px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Card footer styles (if needed) */
+.card-footer {
+    padding: 16px 24px;
+    background-color: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    font-size: 1rem;
+}

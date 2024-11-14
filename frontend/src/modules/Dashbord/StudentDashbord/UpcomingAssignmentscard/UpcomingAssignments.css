@@ -1,0 +1,71 @@
+/* UpcomingAssignments.css */
+
+/* Container for the Upcoming Assignments component */
+.upcoming-assignments-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+}
+
+.upcoming-assignments-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #fff;
+    min-width: 30%;
+    height: 100%;
+}
+
+/* List of assignments */
+.assignment-list {
+    margin-top: 1rem;
+}
+
+.assignment-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 10px;
+    border-bottom: 1px solid #e2e6ea;
+}
+
+.assignment-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+}
+
+.assignment-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.assignment-title {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.assignment-due {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* Optional: Ensure the card stretches and has a clean background */
+.upcoming-assignments-card {
+    min-width: 45%;
+    height: 100%;
+    background-color: #fff;
+}
+
+/* Styling for icons inside the cards */
+.icon {
+    width: 24px;
+    height: 24px;
+}

@@ -1,0 +1,49 @@
+.see-courses-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    transition: box-shadow 0.2s ease;
+}
+
+.see-courses-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.see-courses-card h5 {
+    font-size: 1.25rem;
+    color: #495057;
+}
+
+.analytics-section {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.analytics-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.analytics-item .icon {
+    color: #6c757d;
+    margin-right: 10px;
+}
+
+.analytics-item span {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-right: auto;
+}
+
+.analytics-item strong {
+    font-size: 1rem;
+    color: #212529;
+}
+
+button.btn-outline-primary {
+    font-weight: 500;
+    border-radius: 20px;
+}

@@ -1,0 +1,37 @@
+/* ChatSection.css */
+.chat-section {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.chat-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chat-join-button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.chat-join-button:hover {
+    background-color: #333;
+}
+
+@media (max-width: 768px) {
+    .chat-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .chat-card {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,16 @@
+.additional-info-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.classmates-card,
+.clubs-card,
+.events-card {
+    flex: 1;
+}
+
+.icon {
+    color: #4a5568;
+    /* Optional: customize icon color */
+}

@@ -1,0 +1,99 @@
+/* schedule.css */
+
+/* Basic card styles */
+.schedule-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.schedule-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.schedule-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Dropdown button styles */
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-btn {
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.dropdown-content div {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.dropdown-content div:hover {
+    background-color: #f4f4f4;
+}
+
+/* Content inside the card */
+.schedule-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.schedule-item {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.schedule-item .calendar-icon {
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.schedule-item p {
+    margin: 0;
+}
+
+.schedule-item .subject {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.schedule-item .time-room {
+    font-size: 14px;
+    color: #888;
+}

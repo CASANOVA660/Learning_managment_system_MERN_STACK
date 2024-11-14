@@ -1,0 +1,66 @@
+/* SubjectCard component */
+.subject-card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.subject-card {
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+}
+
+.subject-card-image-container {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}
+
+.subject-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.subject-card-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+}
+
+.subject-card-title {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.subject-card-content {
+    padding: 16px;
+}
+
+.subject-card-description {
+    font-size: 0.875rem;
+    color: #555;
+    margin: 0;
+}
+
+.subject-card-courses {
+    font-weight: 500;
+    color: #333;
+    margin-top: 8px;
+}

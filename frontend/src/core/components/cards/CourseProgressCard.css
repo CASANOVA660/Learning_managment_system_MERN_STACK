@@ -1,0 +1,19 @@
+.course-progress-card {
+    max-width: 300px;
+}
+
+.progress-line {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.progress-section {
+    width: 18%;
+    height: 5px;
+    background-color: #e9ecef;
+}
+
+.progress-section.completed {
+    background-color: #28a745;
+}

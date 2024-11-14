@@ -1,0 +1,63 @@
+/* AchievementPoints Component Styling */
+.achievement-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.achievement-card .card-header {
+    text-align: center;
+}
+
+.achievement-card .card-header .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.achievement-card .card-header .card-description {
+    font-size: 0.875rem;
+    color: #6b7280;
+    /* muted color */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-muted-foreground {
+    color: #6b7280;
+    /* muted color */
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 9999px;
+    height: 8px;
+    margin-top: 12px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: rgb(220, 40, 40);
+    /* Color of the progress bar */
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+}
+
+.mt-4 {
+    margin-top: 16px;
+}
+
+.mt-2 {
+    margin-top: 8px;
+}

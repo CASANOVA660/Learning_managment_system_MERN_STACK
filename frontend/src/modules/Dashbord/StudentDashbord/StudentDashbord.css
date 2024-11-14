@@ -1,0 +1,198 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: scroll;
+    /* Prevent body from scrolling */
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Full page height */
+}
+
+/* Content container: Holds the Cardinfopage and Progress component */
+.content {
+    display: flex;
+    flex-direction: column;
+    /* Stack the cards vertically */
+    margin-left: 16rem;
+    /* Sidebar width */
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+.overview-container {
+    display: flex;
+    gap: 1.5rem;
+    /* Space between GradeOverview and AttendanceTracker */
+    margin-top: 2rem;
+}
+
+.grade-overview-container {
+    flex: 3;
+    /* 3/4 of the width */
+}
+
+.attendance-tracker-container {
+    flex: 1;
+    /* 1/4 of the width */
+}
+
+/* Ensure both components are side by side */
+.course-achievement-container {
+    display: flex;
+    gap: 20px;
+    /* Space between the components */
+    margin-top: 20px;
+    /* Add space between this section and the previous content */
+    align-items: stretch;
+    /* Make sure they stretch vertically */
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Force all components to have equal height */
+.course-progress-container,
+.schedule-container,
+.achievement-points-container {
+    flex: 1;
+    /* Ensure each container fills equal space */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #fff;
+    min-height: 0;
+    /* Ensure flex items stretch to fill space */
+    height: 100%;
+}
+
+/* Prevent the components from shrinking */
+.course-progress-container,
+.schedule-container,
+.achievement-points-container {
+    min-width: 30%;
+    /* Prevent them from shrinking too much */
+}
+
+/* If the content inside is dynamic, ensure both containers stretch the content evenly */
+.course-progress-container>*,
+.schedule-container>*,
+.achievement-points-container>* {
+    flex-grow: 1;
+    /* Ensures all child elements stretch to fill the available space */
+}
+
+/* New container for Study Time Tracker and Upcoming Assignments */
+.study-upcoming-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    /* Add space between this section and the previous content */
+    align-items: stretch;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Study Time Tracker (75% of space) and Upcoming Assignments (25% of space) */
+.study-time-tracker-container {
+    flex: 2.5;
+    /* Take 3/4 of the available space */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #fff;
+    min-height: 0;
+    /* Ensure flex items stretch to fill space */
+    height: 100%;
+}
+
+.upcoming-assignments-container {
+    flex: 1.5;
+    /* Take 1/4 of the available space */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #fff;
+    min-height: 0;
+    /* Ensure flex items stretch to fill space */
+    height: 100%;
+    /* Ensure the height matches other components */
+}
+
+/* If the content inside is dynamic, ensure both containers stretch the content evenly */
+.study-time-tracker-container>*,
+.upcoming-assignments-container>* {
+    flex-grow: 1;
+    /* Ensures all child elements stretch to fill the available space */
+}
+
+/* Styling for buttons within components (e.g., Dropdown menu button) */
+button,
+.dropdown-menu button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+.dropdown-menu button:hover {
+    background-color: #0056b3;
+}
+
+button:focus,
+.dropdown-menu button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+/* Dropdown button styling */
+.dropdown-menu button {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #e2e6ea;
+}
+
+.dropdown-menu button:hover {
+    background-color: #e2e6ea;
+}
+
+@media (max-width: 768px) {
+
+    .course-achievement-container,
+    .study-upcoming-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.schedule-container {
+    margin-top: -0.5px;
+}
+
+.achievement-points-container,
+.study-time-tracker-container,
+.upcoming-assignments-container {
+    height: 100%;
+}
+
+.additional-info-wrapper {
+    margin-top: 20px;
+}
+
+.forum-wrapper {
+    margin-top: 20px;
+}
+
+.chat-section {
+    margin-top: 20px;
+}

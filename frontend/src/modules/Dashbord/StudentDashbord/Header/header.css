@@ -1,0 +1,68 @@
+/* Header.css */
+
+/* The header container */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    /* This is the line that you want aligned */
+    background-color: #fff;
+    margin-left: 16rem;
+    /* Ensure the header aligns with the sidebar */
+    width: calc(100% - 16rem);
+    /* Full width minus the sidebar width */
+    z-index: 2;
+    /* Ensure the header is above the sidebar */
+}
+
+/* The left section of the header */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* The center section where the search input is located */
+.header-center {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #666;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* The right section of the header (for icons like notifications) */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Icon styling */
+.icon {
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Title styling in the header */
+.title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4f4a4a;
+}

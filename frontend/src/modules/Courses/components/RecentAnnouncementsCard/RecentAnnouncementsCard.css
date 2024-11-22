@@ -1,14 +1,13 @@
 /* Container for the Recent Announcements Card */
 .recent-announcement-card {
-    display: flex;
-    flex-direction: column;
+    /* Remove max-width property */
+    width: 100%;
+    height: 100%;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
     padding: 20px;
-    width: 100%;
-    max-width: 800px;
+    box-sizing: border-box;
 }
 
 /* Header Section */

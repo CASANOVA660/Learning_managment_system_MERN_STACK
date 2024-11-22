@@ -88,23 +88,45 @@
     transform: translateY(-5px);
 }
 
-/* Align Featured Resources and Recent Announcements Cards */
 .card-container {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-start;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    /* Ensure the cards wrap on smaller screens */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+/* Individual card containers */
+.feature-card-container,
+.announcement-card-container,
+.events-card-container {
+    min-width: 0;
+    /* Prevents cards from overflowing */
     height: 100%;
 }
 
-/* Featured Resources Card and Recent Announcements Card styling */
-.feature-card-container,
-.announcement-card-container {
-    flex: 1;
-    max-width: 48%;
-    /* Cards will take up 48% width */
-    box-sizing: border-box;
-    height: 100%;
+/* Remove any max-width constraints from card components */
+.featured-resource-card,
+.recent-announcement-card,
+.upcoming-events-card {
+    max-width: none !important;
+}
+
+/* Group projects container */
+.groupproject-card-container {
+    margin-top: 24px;
+    width: 100%;
+}
+
+
+@media (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
 }

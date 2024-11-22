@@ -23,6 +23,14 @@ app.get('/', (req, res) => {
 
 const authRouter = require("./Routes/AuthRoutes");
 app.use("/auth", authRouter);
+
+
+const subjectRouter = require("./Routes/subjectRoutes")
+app.use("/course", subjectRouter)
+
+const scheduleRouter = require("./Routes/scheduleRoutes");
+app.use("/schedule", scheduleRouter);
+
 mongoose.connect(process.env.DBURI);
 
 const db = mongoose.connection;

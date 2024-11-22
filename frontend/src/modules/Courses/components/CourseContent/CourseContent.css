@@ -1,0 +1,307 @@
+/* Layout */
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 1rem 2rem;
+    background-color: #f9fafb;
+    margin-top: -250px;
+}
+
+.main-content.sidebar-closed {
+    margin-left: 0;
+}
+
+/* Container */
+.course-details-container {
+    max-width: 800px;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: white;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar-wrapper.closed {
+    transform: translateX(-100%);
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    background: #18181b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-toggle svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Back Button */
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #18181b;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #27272a;
+}
+
+.back-icon {
+    font-size: 1.25rem;
+}
+
+/* Title */
+.course-details-container h1 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 1.5rem 0;
+}
+
+/* Course Card */
+.course-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+/* Rest of the CSS remains the same */
+/* Course Main Info */
+.course-main-info h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 0.5rem 0;
+}
+
+.course-code {
+    color: #6b7280;
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* Instructor Section */
+.instructor-section {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.instructor-section span {
+    font-size: 0.875rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+/* Course Stats */
+.course-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-info span {
+    font-size: 0.875rem;
+    color: #000000;
+    min-width: 80px;
+}
+
+.achievement-points {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.achievement-points span {
+    font-size: 0.875rem;
+    color: #000000;
+}
+
+.achievement-points p {
+    margin: 0;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Progress Bar */
+.course-progress-container {
+    display: flex;
+    height: 100%;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.course-progress-bar {
+    height: 100%;
+    background-color: #000000;
+    transition: width 0.3s ease;
+}
+
+/* Avatar */
+.course-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-avatar-fallback {
+    color: #6b7280;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar-wrapper {
+        transform: translateX(-100%);
+    }
+
+    .sidebar-wrapper.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .course-details-container {
+        padding-top: 3rem;
+        /* Make space for menu toggle */
+    }
+}
+
+@media (max-width: 768px) {
+    .course-card {
+        padding: 1rem;
+    }
+
+    .progress-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .progress-info span {
+        min-width: auto;
+    }
+
+    .course-details-container h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .dashboard-layout::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 999;
+    }
+
+    .sidebar-wrapper.open+.main-content+.dashboard-layout::after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.course-card {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Hover Effects */
+.course-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease;
+}
+
+.back-button:active {
+    transform: translateY(1px);
+}
+
+.sidebar-wrapper {
+    transition: transform 0.3s ease;
+}
+
+/* Hover effects */
+.menu-toggle:hover {
+    background-color: #27272a;
+}
+
+.menu-toggle:active {
+    transform: scale(0.95);
+}

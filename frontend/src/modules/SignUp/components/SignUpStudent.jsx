@@ -44,18 +44,29 @@ const SignUpStudent = () => {
         }
 
         try {
-            await axiosRequest.post('/auth/signup', {
+            const response = await axiosRequest.post('/auth/signup', {
                 firstName,
                 lastName,
                 email,
                 password,
             });
-            navigate('/studentDashboard');
+
+            // Store the token in localStorage
+            const token = response.data.token;
+            if (keepLoggedIn) {
+                localStorage.setItem('token', token); // Store permanently
+            } else {
+                sessionStorage.setItem('token', token); // Store for session only
+            }
+
+            // Redirect to the dashboard
+            navigate('/studentDashbord');
         } catch (err) {
-            console.error(err.response.data);
-            setErrors({ server: err.response.data.msg });
+            console.error(err.response?.data);
+            setErrors({ server: err.response?.data?.msg || "Something went wrong" });
         }
     };
+
 
     return (
         <div className="container-fluid">

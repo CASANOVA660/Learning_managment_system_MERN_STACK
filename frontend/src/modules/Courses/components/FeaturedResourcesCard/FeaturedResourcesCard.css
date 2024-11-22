@@ -1,15 +1,14 @@
 /* Container for the Featured Resource Card */
 .featured-resource-card {
-    display: flex;
-    flex-direction: row;
-    /* Make the card horizontal */
+    /* Remove max-width property */
     width: 100%;
-    max-width: 800px;
+    height: 100%;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
     padding: 20px;
+    box-sizing: border-box;
+    margin-top: -8px;
 }
 
 /* Remove gray background from the title */

@@ -3,7 +3,9 @@ import Sidebar from '../Dashbord/StudentDashbord/sideBar/sideBar';
 import SubjectCard from './components/SubjectCard/SubjectCard';
 import { Search } from 'lucide-react'; // Importing Search icon from 'lucide-react'
 import FeaturedResourcesCard from './components/FeaturedResourcesCard/FeaturedResourcesCard';
-import RecentAnnouncementsCard from './components/RecentAnnouncementsCard/RecentAnnouncementsCard';
+import RecentAnnouncementsCard from './components/RecentAnnouncementsCard/RecentAnnouncementsCard';  // Import the new card
+import UpcomingEventsCard from './components/UpcomingEventsCard/UpcomingEventsCard'; // Import UpcomingEventsCard
+import GroupProjectsCard from './components/GroupProjectsCard/GroupProjectsCard';
 import './CoursesPage.css';
 
 const filteredSubjects = [
@@ -57,7 +59,7 @@ const CoursesPage = () => {
                         </div>
                     )}
 
-                    {/* Featured Resources and Recent Announcements Cards side by side */}
+                    {/* Cards Layout (Featured, Announcements, Events) */}
                     <div className="card-container">
                         <div className="feature-card-container">
                             <FeaturedResourcesCard />
@@ -65,7 +67,16 @@ const CoursesPage = () => {
                         <div className="announcement-card-container">
                             <RecentAnnouncementsCard />
                         </div>
+                        <div className="events-card-container">
+                            <UpcomingEventsCard />
+                        </div>
                     </div>
+
+                    {/* Group Projects Card placed below other cards */}
+                    <div className="groupproject-card-container">
+                        <GroupProjectsCard />
+                    </div>
+
                 </div>
             </div>
         </div>

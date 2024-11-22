@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../cards/cardinfo";
-import "./CourseProgress.css"; // Ensure the CSS file is imported
+import "./CourseProgress.css";
 
 const CourseProgress = () => {
     const subjects = [
@@ -10,30 +10,30 @@ const CourseProgress = () => {
     ];
 
     return (
-        <Card>
+        <Card className="course-progress-card">
             <CardHeader>
                 <CardTitle>Course Progress</CardTitle>
                 <CardDescription>Completion rate by subject</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
-                {subjects.map((subject, index) => (
-                    <div key={index} className="space-y-2">
-                        <div className="flex justify-between">
-                            <span className="text-sm">{subject.name}</span>
+            <CardContent>
+                <div className="subjects-list">
+                    {subjects.map((subject, index) => (
+                        <div key={index} className="subject-item">
+                            <div className="subject-header">
+                                <span className="subject-name">{subject.name}</span>
+                                <span className="progress-value">{subject.progress}%</span>
+                            </div>
+                            <div className="progress-bar-container">
+                                <div
+                                    className="progress-bar"
+                                    style={{
+                                        width: `${subject.progress}%`,
+                                    }}
+                                ></div>
+                            </div>
                         </div>
-                        <div className="progress-bar-container">
-                            <div
-                                className="progress-bar"
-                                style={{
-                                    width: `${subject.progress}%`,
-                                }}
-                            ></div>
-                            <span className="progress-percentage" style={{ left: `${subject.progress}%` }}>
-                                {subject.progress}%
-                            </span>
-                        </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </CardContent>
         </Card>
     );

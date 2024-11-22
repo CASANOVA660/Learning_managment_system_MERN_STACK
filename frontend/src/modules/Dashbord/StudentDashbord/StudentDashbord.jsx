@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header/header";
 import SideBar from "./sideBar/sideBar";
 import Cardinfopage from "./cards/pages/cardinfopage";
-import Progress from "./charts/Progress";
+import Progress from "./charts/ProgressDashbord";
 import GradeOverview from "./charts/GradeOverview";
 import AttendanceTracker from "./charts/AttendanceTracker"; // Import the AttendanceTracker component
 import CourseProgress from "./charts/CourseProgress";
@@ -24,6 +24,7 @@ const StudentDashbord = () => {
             <SideBar />
             <div className="content">
                 <Cardinfopage />
+                <Schedule />
                 <Progress />
                 <div className="overview-container">
                     <div className="grade-overview-container">
@@ -37,9 +38,6 @@ const StudentDashbord = () => {
                 <div className="course-achievement-container">
                     <div className="course-progress-container">
                         <CourseProgress />
-                    </div>
-                    <div className="schedule-container">
-                        <Schedule /> {/* Assuming you have a Schedule component */}
                     </div>
                     <div className="achievement-points-container">
                         <AchievementPoints />

@@ -1,0 +1,84 @@
+/* Styling for the Upcoming Events Card */
+.upcoming-events-card {
+    /* Remove max-width property */
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.upcoming-events-card .card-header {
+    margin-bottom: 16px;
+}
+
+.upcoming-events-card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.upcoming-events-card .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.upcoming-events-card .space-y-4 {
+    margin-bottom: 20px;
+}
+
+.upcoming-events-card .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.upcoming-events-card .font-semibold {
+    font-size: 1.125rem;
+}
+
+.upcoming-events-card .text-sm {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.upcoming-events-card .text-muted-foreground {
+    color: #999;
+}
+
+.upcoming-events-card .text-xs {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.upcoming-events-card .badge {
+    background-color: #f1f1f1;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+}
+
+.upcoming-events-card .badge:hover {
+    background-color: #ddd;
+}
+
+.upcoming-events-card button {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 5px 12px;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.upcoming-events-card button:hover {
+    background-color: #f0f0f0;
+}
+
+.upcoming-events-card .mr-2 {
+    margin-right: 8px;
+}

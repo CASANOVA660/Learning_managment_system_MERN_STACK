@@ -1,0 +1,64 @@
+.syllabus-container {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.syllabus-container h2 {
+    font-size: 1.5rem;
+    color: #111827;
+    margin: 0 0 2rem 0;
+}
+
+.syllabus-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.syllabus-week {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.syllabus-week h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+.week-title {
+    color: #6b7280;
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* Hover effect */
+.syllabus-week:hover {
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: -1rem;
+    transition: all 0.2s ease;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .syllabus-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .syllabus-container {
+        padding: 1rem;
+    }
+
+    .syllabus-container h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+}

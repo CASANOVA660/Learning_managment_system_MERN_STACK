@@ -1,0 +1,24 @@
+.course-avatar {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.course-avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-avatar-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e2e8f0;
+    color: #64748b;
+    font-weight: 500;
+}

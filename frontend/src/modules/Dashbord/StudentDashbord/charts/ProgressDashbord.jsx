@@ -10,7 +10,7 @@ import {
     Tooltip,
     ResponsiveContainer
 } from "recharts";
-import './Progress.css'
+import './ProgressDashbord.css'
 
 // Sample data for progress chart
 const progressData = [
@@ -22,7 +22,7 @@ const progressData = [
     { week: "Week 6", progress: 95 },
 ];
 
-const Progress = () => {
+const ProgressDashbord = () => {
     return (
         <Card className="progress-card">
             <CardHeader>
@@ -51,4 +51,4 @@ const Progress = () => {
     );
 };
 
-export default Progress;
+export default ProgressDashbord;

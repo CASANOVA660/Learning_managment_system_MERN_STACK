@@ -1,0 +1,122 @@
+.all-assignments-container {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.all-assignments-container h1 {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.assignments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.assignment-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.assignment-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.assignment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.assignment-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-badge.not-started {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.status-badge.in-progress {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+
+.status-badge.completed {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+.status-badge.late {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.assignment-details {
+    margin-bottom: 1rem;
+}
+
+.assignment-details p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.course-name {
+    font-weight: 500;
+    color: #1976d2 !important;
+}
+
+.subject-name {
+    font-style: italic;
+}
+
+.assignment-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.progress-indicator {
+    font-size: 0.9rem;
+}
+
+.completed-text {
+    color: #388e3c;
+    font-weight: 500;
+}
+
+.pending-text {
+    color: #f57c00;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .all-assignments-container {
+        padding: 1rem;
+    }
+
+    .assignments-grid {
+        grid-template-columns: 1fr;
+    }
+}

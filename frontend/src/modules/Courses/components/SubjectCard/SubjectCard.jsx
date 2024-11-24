@@ -9,7 +9,7 @@ import CourseContent from "../CourseContent/CourseContent";
 const SubjectCard = ({ subject, onClick }) => {
     const navigate = useNavigate();
     return (
-        <Card className="subject-card" onClick={() => navigate(`/course/${subject.id}`)}>
+        <Card className="subject-card" onClick={() => navigate(`/subjects/${subject.id}`)}>
             <div className="subject-card-image-container">
                 <img
                     src={subject.image || '/images/default-image.png'}

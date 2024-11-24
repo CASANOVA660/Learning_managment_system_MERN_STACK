@@ -11,6 +11,25 @@ const getAllSubjects = async (req, res) => {
     }
 };
 
+const getSubjectById = async (req, res) => {
+    try {
+        const subjectId = parseInt(req.params.id);
+        const subject = await Subject.findOne({ id: subjectId });
+
+        if (!subject) {
+            return res.status(404).json({ message: "Subject not found" });
+        }
+
+        res.status(200).json(subject);
+    } catch (error) {
+        res.status(500).json({
+            message: "Error fetching subject",
+            error: error.message
+        });
+    }
+};
+
 module.exports = {
     getAllSubjects,
+    getSubjectById,
 };

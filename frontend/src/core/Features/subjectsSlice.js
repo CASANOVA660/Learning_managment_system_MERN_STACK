@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axiosRequest from "../../lib/AxiosConfig"; // Adjust path as needed
 
 export const fetchSubjects = createAsyncThunk("subjects/fetchSubjects", async () => {
-    const response = await axiosRequest.get("/course/subjects");
+    const response = await axiosRequest.get("/subjects");
     return response.data;
 });
 

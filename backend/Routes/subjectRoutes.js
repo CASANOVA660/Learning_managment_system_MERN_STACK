@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { getAllSubjects } = require("../Controller/subjectController"); // Adjust path as needed
+const { getAllSubjects, getSubjectById } = require("../Controller/subjectController");
 
-// Route to get all subjects
-router.get("/subjects", getAllSubjects);
+// Get all subjects
+router.get("/", getAllSubjects);
+
+// Get subject by ID
+router.get("/:id", getSubjectById);
 
 module.exports = router;

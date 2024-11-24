@@ -1,0 +1,146 @@
+.study-tracker-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.statistics-section {
+    margin-bottom: 3rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: #000000;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.active-session-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+.active-timer {
+    text-align: center;
+}
+
+.timer {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.course-name {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.course-button {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #0a0a0a;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.course-button:hover {
+    background: #e0e0e0;
+}
+
+.end-button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    background: #ff4444;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.end-button:hover {
+    background: #cc0000;
+}
+
+.history-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.history-list {
+    margin-top: 1.5rem;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.session-info h4 {
+    margin: 0;
+    color: #333;
+}
+
+.session-info p {
+    margin: 0.3rem 0 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.duration {
+    font-weight: 500;
+    color: #1976d2;
+}
+
+@media (max-width: 768px) {
+    .study-tracker-container {
+        padding: 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat-card p {
+        font-size: 1.5rem;
+    }
+
+    .timer {
+        font-size: 2rem;
+    }
+}

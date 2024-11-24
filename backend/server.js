@@ -26,11 +26,19 @@ app.use("/auth", authRouter);
 
 
 const subjectRouter = require("./Routes/subjectRoutes")
-app.use("/course", subjectRouter)
+app.use("/subjects", subjectRouter)
 
 const scheduleRouter = require("./Routes/scheduleRoutes");
 app.use("/schedule", scheduleRouter);
 
+const courseRouter = require("./Routes/courseRoutes");
+app.use("/chapters", courseRouter);
+
+const assignmentRoutes = require('./routes/assignmentRoutes');
+app.use('/assignments', assignmentRoutes);
+
+const studySessionRoutes = require('./Routes/studySessionRoutes');
+app.use('/study-sessions', studySessionRoutes);
 mongoose.connect(process.env.DBURI);
 
 const db = mongoose.connection;

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axiosRequest from "../../../lib/AxiosConfig";
-import './SignUpStudent.css'; // Assuming you have this CSS file
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
+import './SignUpStudent.css';
 
 const SignUpStudent = () => {
     const [formData, setFormData] = useState({
@@ -10,28 +11,51 @@ const SignUpStudent = () => {
         email: '',
         password: '',
         confirmPassword: '',
+        class: '',
         keepLoggedIn: false,
     });
+    const [classes, setClasses] = useState([]);
     const [errors, setErrors] = useState({});
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
-    const { firstName, lastName, email, password, confirmPassword, keepLoggedIn } = formData;
+    useEffect(() => {
+        const fetchClasses = async () => {
+            try {
+                const response = await axiosRequest.get('/classes');
+                setClasses(response.data);
+            } catch (error) {
+                console.error('Error fetching classes:', error);
+                setErrors(prev => ({ ...prev, server: 'Failed to load classes' }));
+            }
+        };
+        fetchClasses();
+    }, []);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
-        setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: type === 'checkbox' ? checked : value
+        }));
+        // Clear error when user starts typing
+        if (errors[name]) {
+            setErrors(prev => ({ ...prev, [name]: '' }));
+        }
     };
 
     const validateForm = () => {
         const errors = {};
-        if (!firstName) errors.firstName = "First name is required";
-        if (!lastName) errors.lastName = "Last name is required";
-        if (!email) errors.email = "Email is required";
-        if (!password) errors.password = "Password is required";
-        if (password.length < 8) errors.password = "Password must be at least 8 characters long";
-        if (password !== confirmPassword) errors.confirmPassword = "Passwords do not match";
+        if (!formData.firstName.trim()) errors.firstName = 'First name is required';
+        if (!formData.lastName.trim()) errors.lastName = 'Last name is required';
+        if (!formData.email.trim()) errors.email = 'Email is required';
+        else if (!/\S+@\S+\.\S+/.test(formData.email)) errors.email = 'Email is invalid';
+        if (!formData.password) errors.password = 'Password is required';
+        else if (formData.password.length < 6) errors.password = 'Password must be at least 6 characters';
+        if (formData.password !== formData.confirmPassword) errors.confirmPassword = 'Passwords do not match';
+        if (!formData.class) errors.class = 'Please select your class';
         return errors;
     };
 
@@ -43,159 +67,205 @@ const SignUpStudent = () => {
             return;
         }
 
+        setIsLoading(true);
         try {
-            const response = await axiosRequest.post('/auth/signup', {
-                firstName,
-                lastName,
-                email,
-                password,
+            const response = await axiosRequest.post('/auth/student/register', {
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                email: formData.email,
+                password: formData.password,
+                class: parseInt(formData.class)
             });
 
-            // Store the token in localStorage
-            const token = response.data.token;
-            if (keepLoggedIn) {
-                localStorage.setItem('token', token); // Store permanently
+            if (formData.keepLoggedIn) {
+                localStorage.setItem('token', response.data.token);
             } else {
-                sessionStorage.setItem('token', token); // Store for session only
+                sessionStorage.setItem('token', response.data.token);
             }
 
-            // Redirect to the dashboard
             navigate('/studentDashbord');
         } catch (err) {
             console.error(err.response?.data);
             setErrors({ server: err.response?.data?.msg || "Something went wrong" });
+        } finally {
+            setIsLoading(false);
         }
     };
 
-
     return (
-        <div className="container-fluid">
-            {/* Left blue section */}
-            <div className="fixed-left">
-                <a className="d-block mb-4" href="#">
-                    <img
-                        src="https://preview.webpixels.io/web/img/logos/clever-light.svg"
-                        className="h-10"
-                        alt="..."
-                    />
-                </a>
-                <div className="text-center">
-                    <h1 className="ls-tight font-bolder display-6 mb-3">
-                        Start your learning journey today.
-                    </h1>
-                    <p className="text-opacity-75">
-                        Join our platform as a student and explore a world of learning opportunities.
-                    </p>
+        <div className="signup-container">
+            <div className="signup-left-panel">
+                <div className="brand">
+                    <h1>uni LMS</h1>
+                </div>
+                <div className="left-content">
+                    <h2>Start Your Learning Journey</h2>
+                    <p>Join our community of learners and achieve your goals</p>
+                    <div className="features-list">
+                        <div className="feature-item">
+                            <span className="feature-icon">📚</span>
+                            <div className="feature-text">
+                                <h3>Personalized Learning</h3>
+                                <p>Learn at your own pace with customized content</p>
+                            </div>
+                        </div>
+                        <div className="feature-item">
+                            <span className="feature-icon">🎯</span>
+                            <div className="feature-text">
+                                <h3>Track Progress</h3>
+                                <p>Monitor your achievements and growth</p>
+                            </div>
+                        </div>
+                        <div className="feature-item">
+                            <span className="feature-icon">👥</span>
+                            <div className="feature-text">
+                                <h3>Collaborative Learning</h3>
+                                <p>Connect with peers and instructors</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            {/* Right section (form) */}
-            <div className="main-content">
-                <div className="w-100">
-                    <div className="mb-6 text-center">
-                        <span className="d-inline-block h1 mb-3">👋</span>
-                        <h1 className="ls-tight font-bolder h2">Welcome to Student Signup!</h1>
-                    </div>
+            <div className="signup-right-panel">
+                <div className="form-container">
+                    <h2>Create Student Account</h2>
+                    <p className="form-subtitle">Fill in your information to get started</p>
+
+                    {errors.server && <div className="error-message">{errors.server}</div>}
+
                     <form onSubmit={handleSignup}>
-                        <div className="form-group">
-                            <label htmlFor="firstName">First Name</label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="firstName"
-                                name="firstName"
-                                value={firstName}
-                                onChange={handleChange}
-                            />
-                            {errors.firstName && <div className="text-danger">{errors.firstName}</div>}
+                        <div className="name-fields">
+                            <div className="input-group">
+                                <label>First Name</label>
+                                <input
+                                    type="text"
+                                    name="firstName"
+                                    value={formData.firstName}
+                                    onChange={handleChange}
+                                    placeholder="Enter first name"
+                                    className={errors.firstName ? 'error' : ''}
+                                />
+                                {errors.firstName && <span className="error-text">{errors.firstName}</span>}
+                            </div>
+
+                            <div className="input-group">
+                                <label>Last Name</label>
+                                <input
+                                    type="text"
+                                    name="lastName"
+                                    value={formData.lastName}
+                                    onChange={handleChange}
+                                    placeholder="Enter last name"
+                                    className={errors.lastName ? 'error' : ''}
+                                />
+                                {errors.lastName && <span className="error-text">{errors.lastName}</span>}
+                            </div>
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="lastName">Last Name</label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="lastName"
-                                name="lastName"
-                                value={lastName}
-                                onChange={handleChange}
-                            />
-                            {errors.lastName && <div className="text-danger">{errors.lastName}</div>}
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="email">Email Address</label>
+
+                        <div className="input-group">
+                            <label>Email Address</label>
                             <input
                                 type="email"
-                                className="form-control"
-                                id="email"
                                 name="email"
-                                value={email}
+                                value={formData.email}
                                 onChange={handleChange}
+                                placeholder="Enter your email"
+                                className={errors.email ? 'error' : ''}
                             />
-                            {errors.email && <div className="text-danger">{errors.email}</div>}
+                            {errors.email && <span className="error-text">{errors.email}</span>}
                         </div>
-                        <div className="form-group position-relative">
-                            <label htmlFor="password">Password</label>
-                            <input
-                                type={showPassword ? 'text' : 'password'}
-                                className="form-control"
-                                id="password"
-                                name="password"
-                                value={password}
+
+                        <div className="input-group">
+                            <label>Select Your Class</label>
+                            <select
+                                name="class"
+                                value={formData.class}
                                 onChange={handleChange}
-                            />
-                            <button
-                                type="button"
-                                className="toggle-password-btn"
-                                onClick={() => setShowPassword(!showPassword)}
+                                className={errors.class ? 'error' : ''}
                             >
-                                {showPassword ? '👁️' : '👁️‍🗨️'}
-                            </button>
-                            {errors.password && <div className="text-danger">{errors.password}</div>}
+                                <option value="">Choose your class</option>
+                                {classes.map((classItem) => (
+                                    <option key={classItem.id} value={classItem.id}>
+                                        {classItem.name} - {classItem.department}
+                                    </option>
+                                ))}
+                            </select>
+                            {errors.class && <span className="error-text">{errors.class}</span>}
                         </div>
-                        <div className="form-group position-relative">
-                            <label htmlFor="confirmPassword">Confirm Password</label>
-                            <input
-                                type={showConfirmPassword ? 'text' : 'password'}
-                                className="form-control"
-                                id="confirmPassword"
-                                name="confirmPassword"
-                                value={confirmPassword}
-                                onChange={handleChange}
-                            />
-                            <button
-                                type="button"
-                                className="toggle-password-btn"
-                                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                            >
-                                {showConfirmPassword ? '👁️' : '👁️‍🗨️'}
-                            </button>
-                            {errors.confirmPassword && <div className="text-danger">{errors.confirmPassword}</div>}
+
+                        <div className="input-group">
+                            <label>Password</label>
+                            <div className="password-input">
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    name="password"
+                                    value={formData.password}
+                                    onChange={handleChange}
+                                    placeholder="Create password"
+                                    className={errors.password ? 'error' : ''}
+                                />
+                                <button
+                                    type="button"
+                                    className="password-toggle"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                >
+                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                </button>
+                            </div>
+                            {errors.password && <span className="error-text">{errors.password}</span>}
                         </div>
-                        <div className="form-check mb-3">
+
+                        <div className="input-group">
+                            <label>Confirm Password</label>
+                            <div className="password-input">
+                                <input
+                                    type={showConfirmPassword ? "text" : "password"}
+                                    name="confirmPassword"
+                                    value={formData.confirmPassword}
+                                    onChange={handleChange}
+                                    placeholder="Confirm password"
+                                    className={errors.confirmPassword ? 'error' : ''}
+                                />
+                                <button
+                                    type="button"
+                                    className="password-toggle"
+                                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                >
+                                    {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+                                </button>
+                            </div>
+                            {errors.confirmPassword && <span className="error-text">{errors.confirmPassword}</span>}
+                        </div>
+
+                        <div className="checkbox-group">
                             <input
-                                className="form-check-input"
                                 type="checkbox"
-                                id="check_keep_logged_in"
+                                id="keepLoggedIn"
                                 name="keepLoggedIn"
-                                checked={keepLoggedIn}
+                                checked={formData.keepLoggedIn}
                                 onChange={handleChange}
                             />
-                            <label className="form-check-label" htmlFor="check_keep_logged_in">
-                                Keep me logged in
-                            </label>
+                            <label htmlFor="keepLoggedIn">Keep me logged in</label>
                         </div>
-                        <button type="submit" className="btn btn-primary mb-3">
-                            Sign Up
+
+                        <button type="submit" className="submit-btn" disabled={isLoading}>
+                            {isLoading ? 'Creating Account...' : 'Create Account'}
                         </button>
+
+                        <div className="divider">
+                            <span>or</span>
+                        </div>
+
+                        <button type="button" className="google-btn">
+                            <FaGoogle />
+                            <span>Sign up with Google</span>
+                        </button>
+
+                        <p className="login-link">
+                            Already have an account? <Link to="/login">Log in</Link>
+                        </p>
                     </form>
-
-                    <div className="py-4 text-center">
-                        <span className="text-xs text-uppercase font-semibold">OR</span>
-                    </div>
-
-                    <a href="#" className="btn btn-neutral w-100">
-                        Sign up with Google
-                    </a>
                 </div>
             </div>
         </div>

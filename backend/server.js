@@ -5,6 +5,10 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const router = express.Router();
+const http = require('http');
+const server = http.createServer(app);
+
+
 
 app.use(bodyParser.json());
 const path = require("path");
@@ -41,6 +45,24 @@ const studySessionRoutes = require('./Routes/studySessionRoutes');
 app.use('/study-sessions', studySessionRoutes);
 mongoose.connect(process.env.DBURI);
 
+const achievementRoutes = require('./Routes/achievementRoutes');
+app.use('/achievements', achievementRoutes);
+
+const clubRoutes = require('./Routes/clubRoutes');
+app.use('/clubs', clubRoutes);
+
+const classRoutes = require('./Routes/classRoutes');
+app.use('/classes', classRoutes);
+
+const teacherRoutes = require("./routes/teacherRoutes");
+app.use("/teachers", teacherRoutes);
+
+const idRoutes = require("./Routes/IDsRoutes");
+app.use("/ids", idRoutes)
+
+const departmentRoutes = require('./Routes/departementRoutes');
+app.use('/departments', departmentRoutes);
+
 const db = mongoose.connection;
 db.on("error", (error) => {
     console.error("MongoDB connection error:", error);
@@ -50,7 +72,9 @@ db.once("open", () => {
     console.log("Connected to MongoDB");
 });
 
-const server = app.listen(process.env.PORT, () => {
-    console.log(`server started on port ${process.env.PORT}`);
-});
 
+
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});

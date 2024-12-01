@@ -1,0 +1,67 @@
+.container {
+    display: flex;
+    /* Use flexbox for layout */
+}
+
+.content {
+    flex: 1;
+    /* Take the remaining space */
+    padding: 30px;
+    /* Add padding for content */
+    background: rgba(0, 0, 0, 0.8);
+    /* Match the background color */
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+    margin-left: 250px;
+    /* Adjust margin to account for sidebar width */
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.webcam {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ffffff;
+}
+
+.button {
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.3s;
+    color: white;
+}
+
+.startButton {
+    background: #28a745;
+    /* Green */
+}
+
+.startButton:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+.endButton {
+    background: #dc3545;
+    /* Red */
+}
+
+.endButton:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}

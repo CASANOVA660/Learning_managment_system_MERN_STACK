@@ -6,7 +6,6 @@ const studentSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
-
     firstName: {
         type: String,
         required: true,
@@ -24,10 +23,23 @@ const studentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    class: {
+        type: Number,
+        ref: 'Class',
+        required: true
+    },
+    enrollmentDate: {
+        type: Date,
+        default: Date.now,
+    },
     createdAt: {
         type: Date,
         default: Date.now,
     },
+    role: {
+        type: String,
+        default: 'student'
+    }
 });
 
 const Student = mongoose.model('Student', studentSchema);

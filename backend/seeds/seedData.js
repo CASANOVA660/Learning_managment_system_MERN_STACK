@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const Teacher = require('./Model/TeacherModel');
-const Course = require('./Model/CourseModel');
+const Teacher = require('../Model/TeacherModel');
+const Course = require('../Model/CourseModel');
 require('dotenv').config();
 
 const teachers = [

@@ -21,6 +21,14 @@ const teacherSchema = new mongoose.Schema({
     },
     courses: [{
         type: Number
+    }],
+    subjects: [{
+        type: mongoose.Schema.Types.ObjectId, // Reference to Subject model
+        ref: 'Subject'
+    }],
+    classes: [{
+        type: mongoose.Schema.Types.ObjectId, // Reference to Class model
+        ref: 'Class'
     }]
 });
 

@@ -1,0 +1,241 @@
+.subjects-page-container {
+    display: flex;
+    /* Use flexbox for layout */
+    padding: 2rem;
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    flex: 1;
+    /* Take the remaining space */
+    margin-left: 250px;
+    /* Adjust margin to account for sidebar width */
+}
+
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    color: #1a237e;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: #6c757d;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-icon {
+    font-size: 1.5rem;
+    color: #1a237e;
+}
+
+.section-header h2 {
+    font-size: 1.25rem;
+    color: #2c3e50;
+}
+
+/* Classes Section */
+.classes-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+.class-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.class-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.class-item:hover {
+    transform: translateY(-2px);
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.class-item.active {
+    border-color: #1a237e;
+    background: #fff;
+}
+
+.class-item-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.class-icon {
+    font-size: 1.25rem;
+    color: #1a237e;
+}
+
+.class-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Subjects Section */
+.subjects-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.subject-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+}
+
+.subject-image {
+    position: relative;
+    height: 160px;
+}
+
+.subject-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.subject-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+}
+
+.subject-content {
+    padding: 1rem;
+}
+
+.subject-content p {
+    color: #6c757d;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.subject-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-manage,
+.btn-view {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-manage {
+    background: #1a237e;
+    color: white;
+    flex: 2;
+}
+
+.btn-view {
+    background: #e3f2fd;
+    color: #1a237e;
+    flex: 1;
+}
+
+.btn-manage:hover {
+    background: #283593;
+}
+
+.btn-view:hover {
+    background: #bbdefb;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #1a237e;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.add-subject-btn {
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-subject-btn:hover {
+    background-color: #283593;
+}

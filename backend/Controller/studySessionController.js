@@ -1,4 +1,30 @@
 const StudySession = require('../Model/StudySession');
+const { onStudySessionComplete } = require('./achievementTriggers');
+
+const endStudySession = async (req, res) => {
+    try {
+        const { studentId, duration } = req.body;
+
+        const session = new StudySession({
+            studentId: Number(studentId),
+            duration,
+            endTime: new Date()
+        });
+
+        await session.save();
+
+        // Trigger achievement check
+        await onStudySessionComplete(studentId, duration);
+
+        res.status(200).json(session);
+    } catch (error) {
+        console.error('Error in endStudySession:', error);
+        res.status(500).json({
+            message: "Error ending study session",
+            error: error.message
+        });
+    }
+};
 
 const createStudySession = async (req, res) => {
     try {
@@ -39,5 +65,6 @@ const getStudentSessions = async (req, res) => {
 
 module.exports = {
     createStudySession,
-    getStudentSessions
+    getStudentSessions,
+    endStudySession
 };

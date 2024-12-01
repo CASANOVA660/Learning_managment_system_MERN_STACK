@@ -20,11 +20,11 @@ const Sidebar = () => {
     const links = [
         { icon: Layout, label: "Dashboard", href: "/studentDashbord" },
         { icon: Star, label: "Courses", href: "/courses" },
-        { icon: Trophy, label: "Achievements", href: "#" },
+        { icon: Trophy, label: "Achievements", href: "/achievements" },
         { icon: Book, label: "Assignments", href: "/assignments" },
         { icon: Clock, label: "Study Tracker", href: "/study-tracker" },
         { icon: Users, label: "Classmates", href: "#" },
-        { icon: Bookmark, label: "Clubs", href: "#" },
+        { icon: Bookmark, label: "Clubs", href: "/clubs" },
         { icon: CalendarDays, label: "Events", href: "#" },
         { icon: MessageSquare, label: "Forum", href: "#" },
         { icon: MessageCircle, label: "Class Chat", href: "#" },

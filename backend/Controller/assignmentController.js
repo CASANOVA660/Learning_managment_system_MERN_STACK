@@ -191,6 +191,45 @@ const getStudentAssignments = async (req, res) => {
     }
 };
 
+// Function to add a new assignment
+const addAssignment = async (req, res) => {
+    try {
+        const { id, title, description, dueDate, questions, courseId, subjectId, teacherId } = req.body;
+
+        // Validate required fields
+        if (!id || !title || !description || !dueDate || !questions || !courseId || !subjectId || !teacherId) {
+            return res.status(400).json({
+                message: "All fields are required"
+            });
+        }
+
+        // Create a new assignment
+        const newAssignment = new Assignment({
+            id,
+            title,
+            description,
+            dueDate,
+            questions,
+            courseId,
+            subjectId,
+            teacherId
+        });
+
+        // Save the assignment to the database
+        await newAssignment.save();
+
+        res.status(201).json({
+            message: "Assignment created successfully",
+            assignment: newAssignment
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Error creating assignment",
+            error: error.message
+        });
+    }
+};
+
 
 const Course = require('../Model/CourseModel');
 const Subject = require('../Model/Subject');
@@ -199,6 +238,7 @@ const Subject = require('../Model/Subject');
 
 module.exports = {
     getAllAssignments,
+    addAssignment,
     getAssignmentById,
     getAssignmentsByCourse,
     submitAssignmentResponse,

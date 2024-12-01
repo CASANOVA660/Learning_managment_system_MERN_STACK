@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schedule = require('./Model/ScheduleModel');
+const Schedule = require('../Model/ScheduleModel');
 require('dotenv').config();
 
 const generateTestSchedule = (studentId, weekNumber) => {

@@ -28,7 +28,7 @@ const SubjectCard = ({ subject, onClick }) => {
     );
 };
 
-const SubjectCardTest = () => {
+const SubjectCardTest = ({ classId }) => {
     const dispatch = useDispatch();
 
     // Select data from Redux store

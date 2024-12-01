@@ -16,7 +16,7 @@ const AchievementSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ['ASSIGNMENT', 'COURSE', 'STUDY', 'QUIZ', 'STREAK'],
+        enum: ['ASSIGNMENT', 'COURSE', 'STUDY', 'QUIZ', 'STREAK', 'SUBJECT_MASTERY'],
         required: true
     },
     icon: String,

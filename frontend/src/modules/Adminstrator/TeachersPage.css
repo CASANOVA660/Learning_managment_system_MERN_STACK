@@ -1,0 +1,64 @@
+/* TeachersPage.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    /* Light background */
+    margin: 0;
+    padding: 20px;
+}
+
+.teachers-page-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    /* White background for the container */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.teachers-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.teachers-table th {
+    background-color: #007bff;
+    /* Blue */
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.teachers-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.teachers-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Light gray for even rows */
+}
+
+.teachers-table tr:hover {
+    background-color: #e0e0e0;
+    /* Darker gray on hover */
+}
+
+.teacher-link {
+    color: #007bff;
+    /* Blue link color */
+    text-decoration: none;
+}
+
+.teacher-link:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+}

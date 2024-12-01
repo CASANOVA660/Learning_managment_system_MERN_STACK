@@ -1,0 +1,145 @@
+.announcements-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.announcements-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.announcements-header h2 {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.new-announcement-btn {
+    padding: 8px 16px;
+    background: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.new-announcement-btn:hover {
+    background: #283593;
+}
+
+.announcements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.announcement-card {
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid;
+    background: #f8f9fa;
+    transition: transform 0.3s ease;
+}
+
+.announcement-card:hover {
+    transform: translateX(5px);
+}
+
+.priority-high {
+    border-left-color: #f44336;
+}
+
+.priority-medium {
+    border-left-color: #ff9800;
+}
+
+.priority-low {
+    border-left-color: #4caf50;
+}
+
+.announcement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.announcement-header h3 {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.announcement-footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.priority-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+
+.priority-badge.high {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.priority-badge.medium {
+    background: #fff3e0;
+    color: #ef6c00;
+}
+
+.priority-badge.low {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.announcement-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.announcement-form input,
+.announcement-form textarea,
+.announcement-form select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.announcement-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.announcement-form button {
+    padding: 10px;
+    background: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.announcement-form button:hover {
+    background: #283593;
+}

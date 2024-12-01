@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const Dashboard = require('./Model/DashboardModel');
+const Dashboard = require('../Model/DashboardModel');
 
 dotenv.config();
 

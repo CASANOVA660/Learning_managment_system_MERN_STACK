@@ -6,7 +6,7 @@ const {
     getAssignmentsByCourse,
     submitAssignmentResponse,
     getStudentResponse,
-    getStudentAssignments
+    getStudentAssignments, addAssignment
 } = require('../Controller/assignmentController');
 
 // Get all assignments
@@ -23,5 +23,6 @@ router.post('/:id/submit', submitAssignmentResponse);
 router.get('/:id/response', getStudentResponse);
 
 router.get('/student/:studentId', getStudentAssignments);
+router.post('/addassignments', addAssignment);
 
 module.exports = router;

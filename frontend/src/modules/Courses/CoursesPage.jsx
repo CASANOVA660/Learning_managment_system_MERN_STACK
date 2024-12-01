@@ -6,6 +6,7 @@ import FeaturedResourcesCard from './components/FeaturedResourcesCard/FeaturedRe
 import RecentAnnouncementsCard from './components/RecentAnnouncementsCard/RecentAnnouncementsCard';  // Import the new card
 import UpcomingEventsCard from './components/UpcomingEventsCard/UpcomingEventsCard'; // Import UpcomingEventsCard
 import GroupProjectsCard from './components/GroupProjectsCard/GroupProjectsCard';
+
 import './CoursesPage.css';
 
 const filteredSubjects = [

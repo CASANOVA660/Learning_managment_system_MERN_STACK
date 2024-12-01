@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Assignment = require('./Model/Assignment');
+const Assignment = require('../Model/Assignment');
 require('dotenv').config();
 
 const assignments = [
